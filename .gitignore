@@ -1,160 +1,669 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+================== ML PROJECT ==================
+============= LAPTOP PRICE ANALYSE ==============
 
-# C extensions
-*.so
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+To analyze laptop price analysis in Python we have to import pandas(For data manipulation),numpy(for numerical), and matpotlotlib.pyplot(for ploting any type of graph like box,dist) and seaborn(for visualisation) this libraries.
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+lpdf
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price
+0	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8GB	128GB SSD	Intel Iris Plus Graphics 640	macOS	NaN	1.37kg	11912523.48
+1	Apple	Macbook Air	Ultrabook	13.3"	1440x900	Intel Core i5 1.8GHz	8GB	128GB Flash Storage	Intel HD Graphics 6000	macOS	NaN	1.34kg	7993374.48
+2	HP	250 G6	Notebook	15.6"	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8GB	256GB SSD	Intel HD Graphics 620	No OS	NaN	1.86kg	5112900.00
+3	Apple	MacBook Pro	Ultrabook	15.4"	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16GB	512GB SSD	AMD Radeon Pro 455	macOS	NaN	1.83kg	22563005.40
+4	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8GB	256GB SSD	Intel Iris Plus Graphics 650	macOS	NaN	1.37kg	16037611.20
+...	...	...	...	...	...	...	...	...	...	...	...	...	...
+972	Dell	Alienware 17	Gaming	17.3"	Full HD 1920x1080	Intel Core i7 6700HQ 2.6GHz	32GB	256GB SSD + 1TB HDD	Nvidia GeForce GTX 1070	Windows	10	4.42kg	24897600.00
+973	Toshiba	Tecra A40-C-1DF	Notebook	14.0"	Full HD 1920x1080	Intel Core i5 6200U 2.3GHz	8GB	256GB SSD	Intel HD Graphics 520	Windows	10	1.95kg	10492560.00
+974	Asus	Rog Strix	Gaming	17.3"	Full HD 1920x1080	Intel Core i7 7700HQ 2.8GHz	16GB	256GB SSD + 1TB HDD	Nvidia GeForce GTX 1060	Windows	10	2.73kg	18227710.80
+975	HP	Probook 450	Notebook	15.6"	IPS Panel Full HD 1920x1080	Intel Core i5 7200U 2.70GHz	8GB	128GB SSD + 1TB HDD	Nvidia GeForce 930MX	Windows	10	2.04kg	8705268.00
+976	Lenovo	ThinkPad T460	Notebook	14.0"	1366x768	Intel Core i5 6200U 2.3GHz	4GB	508GB Hybrid	Intel HD Graphics 520	Windows	7	1.70kg	8909784.00
+977 rows × 13 columns
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+lpdf
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price
+0	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8GB	128GB SSD	Intel Iris Plus Graphics 640	macOS	NaN	1.37kg	11912523.48
+1	Apple	Macbook Air	Ultrabook	13.3"	1440x900	Intel Core i5 1.8GHz	8GB	128GB Flash Storage	Intel HD Graphics 6000	macOS	NaN	1.34kg	7993374.48
+2	HP	250 G6	Notebook	15.6"	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8GB	256GB SSD	Intel HD Graphics 620	No OS	NaN	1.86kg	5112900.00
+3	Apple	MacBook Pro	Ultrabook	15.4"	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16GB	512GB SSD	AMD Radeon Pro 455	macOS	NaN	1.83kg	22563005.40
+4	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8GB	256GB SSD	Intel Iris Plus Graphics 650	macOS	NaN	1.37kg	16037611.20
+...	...	...	...	...	...	...	...	...	...	...	...	...	...
+972	Dell	Alienware 17	Gaming	17.3"	Full HD 1920x1080	Intel Core i7 6700HQ 2.6GHz	32GB	256GB SSD + 1TB HDD	Nvidia GeForce GTX 1070	Windows	10	4.42kg	24897600.00
+973	Toshiba	Tecra A40-C-1DF	Notebook	14.0"	Full HD 1920x1080	Intel Core i5 6200U 2.3GHz	8GB	256GB SSD	Intel HD Graphics 520	Windows	10	1.95kg	10492560.00
+974	Asus	Rog Strix	Gaming	17.3"	Full HD 1920x1080	Intel Core i7 7700HQ 2.8GHz	16GB	256GB SSD + 1TB HDD	Nvidia GeForce GTX 1060	Windows	10	2.73kg	18227710.80
+975	HP	Probook 450	Notebook	15.6"	IPS Panel Full HD 1920x1080	Intel Core i5 7200U 2.70GHz	8GB	128GB SSD + 1TB HDD	Nvidia GeForce 930MX	Windows	10	2.04kg	8705268.00
+976	Lenovo	ThinkPad T460	Notebook	14.0"	1366x768	Intel Core i5 6200U 2.3GHz	4GB	508GB Hybrid	Intel HD Graphics 520	Windows	7	1.70kg	8909784.00
+977 rows × 13 columns
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+import csv file
+lpdf = pd.read_csv("/content/laptops_price.csv")
+lpdf = pd.read_csv("/content/laptops_price.csv")
+lpdf
+lpdf
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price
+0	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8GB	128GB SSD	Intel Iris Plus Graphics 640	macOS	NaN	1.37kg	11912523.48
+1	Apple	Macbook Air	Ultrabook	13.3"	1440x900	Intel Core i5 1.8GHz	8GB	128GB Flash Storage	Intel HD Graphics 6000	macOS	NaN	1.34kg	7993374.48
+2	HP	250 G6	Notebook	15.6"	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8GB	256GB SSD	Intel HD Graphics 620	No OS	NaN	1.86kg	5112900.00
+3	Apple	MacBook Pro	Ultrabook	15.4"	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16GB	512GB SSD	AMD Radeon Pro 455	macOS	NaN	1.83kg	22563005.40
+4	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8GB	256GB SSD	Intel Iris Plus Graphics 650	macOS	NaN	1.37kg	16037611.20
+...	...	...	...	...	...	...	...	...	...	...	...	...	...
+972	Dell	Alienware 17	Gaming	17.3"	Full HD 1920x1080	Intel Core i7 6700HQ 2.6GHz	32GB	256GB SSD + 1TB HDD	Nvidia GeForce GTX 1070	Windows	10	4.42kg	24897600.00
+973	Toshiba	Tecra A40-C-1DF	Notebook	14.0"	Full HD 1920x1080	Intel Core i5 6200U 2.3GHz	8GB	256GB SSD	Intel HD Graphics 520	Windows	10	1.95kg	10492560.00
+974	Asus	Rog Strix	Gaming	17.3"	Full HD 1920x1080	Intel Core i7 7700HQ 2.8GHz	16GB	256GB SSD + 1TB HDD	Nvidia GeForce GTX 1060	Windows	10	2.73kg	18227710.80
+975	HP	Probook 450	Notebook	15.6"	IPS Panel Full HD 1920x1080	Intel Core i5 7200U 2.70GHz	8GB	128GB SSD + 1TB HDD	Nvidia GeForce 930MX	Windows	10	2.04kg	8705268.00
+976	Lenovo	ThinkPad T460	Notebook	14.0"	1366x768	Intel Core i5 6200U 2.3GHz	4GB	508GB Hybrid	Intel HD Graphics 520	Windows	7	1.70kg	8909784.00
+977 rows × 13 columns
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
+lpdf.shape
+(977, 13)
+lpdf.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 977 entries, 0 to 976
+Data columns (total 13 columns):
+ #   Column                    Non-Null Count  Dtype  
+---  ------                    --------------  -----  
+ 0   Manufacturer              977 non-null    object 
+ 1   Model Name                977 non-null    object 
+ 2   Category                  977 non-null    object 
+ 3   Screen Size               977 non-null    object 
+ 4   Screen                    977 non-null    object 
+ 5   CPU                       977 non-null    object 
+ 6   RAM                       977 non-null    object 
+ 7    Storage                  977 non-null    object 
+ 8   GPU                       977 non-null    object 
+ 9   Operating System          977 non-null    object 
+ 10  Operating System Version  841 non-null    object 
+ 11  Weight                    977 non-null    object 
+ 12  Price                     977 non-null    float64
+dtypes: float64(1), object(12)
+memory usage: 99.4+ KB
+#for checking if there is a any duplicate value or not
+​
+lpdf.duplicated().sum()
+0
+#for checking if there is a any missing value or not
+​
+lpdf.isnull().sum()
+Manufacturer                  0
+Model Name                    0
+Category                      0
+Screen Size                   0
+Screen                        0
+CPU                           0
+RAM                           0
+ Storage                      0
+GPU                           0
+Operating System              0
+Operating System Version    136
+Weight                        0
+Price                         0
+dtype: int64
+lpdf= lpdf.fillna(value=0) ##filling null value as data preprocessing
+lpdf.isnull().sum()
+Manufacturer                0
+Model Name                  0
+Category                    0
+Screen Size                 0
+Screen                      0
+CPU                         0
+RAM                         0
+ Storage                    0
+GPU                         0
+Operating System            0
+Operating System Version    0
+Weight                      0
+Price                       0
+dtype: int64
+lpdf.head()
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price
+0	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8GB	128GB SSD	Intel Iris Plus Graphics 640	macOS	0	1.37kg	11912523.48
+1	Apple	Macbook Air	Ultrabook	13.3"	1440x900	Intel Core i5 1.8GHz	8GB	128GB Flash Storage	Intel HD Graphics 6000	macOS	0	1.34kg	7993374.48
+2	HP	250 G6	Notebook	15.6"	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8GB	256GB SSD	Intel HD Graphics 620	No OS	0	1.86kg	5112900.00
+3	Apple	MacBook Pro	Ultrabook	15.4"	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16GB	512GB SSD	AMD Radeon Pro 455	macOS	0	1.83kg	22563005.40
+4	Apple	MacBook Pro	Ultrabook	13.3"	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8GB	256GB SSD	Intel Iris Plus Graphics 650	macOS	0	1.37kg	16037611.20
+DATA CLEANING
 
-# Translations
-*.mo
-*.pot
+for the data-cleaning process. we have cleaned replaced some column values for analysis
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+lpdf['RAM'] = lpdf['RAM'].str.replace('GB','').astype('int32')
+lpdf['Weight'] = lpdf['Weight'].str.replace('kg','').astype('float32')
+lpdf['Screen Size'] = lpdf['Screen Size'].str.replace('"', '').astype(float)
+lpdf.head()
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price
+0	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8	128GB SSD	Intel Iris Plus Graphics 640	macOS	0	1.37	11912523.48
+1	Apple	Macbook Air	Ultrabook	13.3	1440x900	Intel Core i5 1.8GHz	8	128GB Flash Storage	Intel HD Graphics 6000	macOS	0	1.34	7993374.48
+2	HP	250 G6	Notebook	15.6	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8	256GB SSD	Intel HD Graphics 620	No OS	0	1.86	5112900.00
+3	Apple	MacBook Pro	Ultrabook	15.4	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16	512GB SSD	AMD Radeon Pro 455	macOS	0	1.83	22563005.40
+4	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8	256GB SSD	Intel Iris Plus Graphics 650	macOS	0	1.37	16037611.20
+lpdf.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 977 entries, 0 to 976
+Data columns (total 13 columns):
+ #   Column                    Non-Null Count  Dtype  
+---  ------                    --------------  -----  
+ 0   Manufacturer              977 non-null    object 
+ 1   Model Name                977 non-null    object 
+ 2   Category                  977 non-null    object 
+ 3   Screen Size               977 non-null    float64
+ 4   Screen                    977 non-null    object 
+ 5   CPU                       977 non-null    object 
+ 6   RAM                       977 non-null    int32  
+ 7    Storage                  977 non-null    object 
+ 8   GPU                       977 non-null    object 
+ 9   Operating System          977 non-null    object 
+ 10  Operating System Version  977 non-null    object 
+ 11  Weight                    977 non-null    float32
+ 12  Price                     977 non-null    float64
+dtypes: float32(1), float64(2), int32(1), object(9)
+memory usage: 91.7+ KB
+For Analysing
 
-# Flask stuff:
-instance/
-.webassets-cache
+sns.distplot(lpdf['Price'])
+<ipython-input-91-2c24832544b8>:1: UserWarning: 
 
-# Scrapy stuff:
-.scrapy
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
-# Sphinx documentation
-docs/_build/
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
 
-# PyBuilder
-.pybuilder/
-target/
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 
-# Jupyter Notebook
-.ipynb_checkpoints
+  sns.distplot(lpdf['Price'])
+<Axes: xlabel='Price', ylabel='Density'>
 
-# IPython
-profile_default/
-ipython_config.py
+[in this dist plot, we have analysed laptop price density wise]
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+lpdf['Manufacturer'].value_counts().plot(kind='bar')
+<Axes: >
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+in this process we have a bulid manufacturer bar plot, here we saw Dell laptops manufacture growth is high, and the lowest laptop manufacture company is Fujitsu.
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
+sns.barplot(x=lpdf['Manufacturer'],y=lpdf['Price'])
+plt.xticks(rotation='vertical')
+plt.show()
 
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
+in this bar plot, we analyzed that Razer company laptop manufacturer price is high and lowest is Vero company
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+lpdf['Category'].value_counts().plot(kind='bar')
+<Axes: >
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+HERE, A NOTEBOOK CAME VISIBLE A NETBOOK HAS A LOWER QUANTITY THAN A LAPTOP.
 
-# SageMath parsed files
-*.sage.py
+sns.barplot(x=lpdf['Category'],y=lpdf['Price'])
+plt.xticks(rotation='vertical')
+plt.show()
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+sns.distplot(lpdf['Screen Size'])
+<ipython-input-96-cc010ec3b9ca>:1: UserWarning: 
 
-# Spyder project settings
-.spyderproject
-.spyproject
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
-# Rope project settings
-.ropeproject
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
 
-# mkdocs documentation
-/site
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+  sns.distplot(lpdf['Screen Size'])
+<Axes: xlabel='Screen Size', ylabel='Density'>
 
-# Pyre type checker
-.pyre/
+sns.scatterplot(x=lpdf['Screen Size'], y=lpdf['Price'])
+<Axes: xlabel='Screen Size', ylabel='Price'>
 
-# pytype static type analyzer
-.pytype/
+lpdf['Screen'].value_counts()
+Full HD 1920x1080                                397
+IPS Panel Full HD 1920x1080                      181
+1366x768                                         180
+Full HD / Touchscreen 1920x1080                   38
+IPS Panel Full HD / Touchscreen 1920x1080         35
+1600x900                                          19
+Touchscreen 1366x768                              15
+IPS Panel 4K Ultra HD / Touchscreen 3840x2160     11
+IPS Panel 4K Ultra HD 3840x2160                   10
+4K Ultra HD / Touchscreen 3840x2160                9
+Quad HD+ / Touchscreen 3200x1800                   8
+IPS Panel 1366x768                                 7
+IPS Panel Retina Display 2560x1600                 6
+Touchscreen 2256x1504                              6
+Touchscreen 2560x1440                              5
+4K Ultra HD 3840x2160                              5
+1440x900                                           4
+IPS Panel Retina Display 2880x1800                 4
+IPS Panel 2560x1440                                3
+IPS Panel Quad HD+ / Touchscreen 3200x1800         3
+IPS Panel Quad HD+ 2560x1440                       3
+Touchscreen 2400x1600                              3
+IPS Panel Touchscreen 1366x768                     3
+1920x1080                                          3
+IPS Panel Retina Display 2304x1440                 3
+2560x1440                                          2
+IPS Panel Quad HD+ 3200x1800                       2
+IPS Panel Full HD 2160x1440                        2
+IPS Panel Touchscreen / 4K Ultra HD 3840x2160      1
+IPS Panel Full HD 1920x1200                        1
+Touchscreen / Full HD 1920x1080                    1
+IPS Panel Touchscreen 2560x1440                    1
+IPS Panel Retina Display 2736x1824                 1
+IPS Panel Touchscreen 1920x1200                    1
+IPS Panel Full HD 2560x1440                        1
+IPS Panel Full HD 1366x768                         1
+Touchscreen / Quad HD+ 3200x1800                   1
+Quad HD+ 3200x1800                                 1
+Name: Screen, dtype: int64
+#for screen we are first analysing and make a column how many of are touchscreen or not
+​
+lpdf['Touchscreen']=lpdf['Screen'].apply(lambda x:1 if 'Touchscreen' in x else 0)
+lpdf['Touchscreen'].value_counts().plot(kind='bar')
+<Axes: >
 
-# Cython debug symbols
-cython_debug/
+sns.barplot(x=lpdf['Touchscreen'], y=lpdf['Price'])
+<Axes: xlabel='Touchscreen', ylabel='Price'>
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+lpdf['IPS']=lpdf['Screen'].apply(lambda x:1 if 'IPS' in x else 0)
+lpdf['IPS'].value_counts().plot(kind='bar')
+<Axes: >
+
+#for screen we are first analysing and make a column how many of are IPS or not
+​
+sns.barplot(x=lpdf['IPS'], y=lpdf['Price'])
+<Axes: xlabel='IPS', ylabel='Price'>
+
+Res= lpdf['Screen'].str.split('x', n=1, expand=True)
+lpdf['x_res'] = Res[0]
+lpdf['y_res'] = Res[1]
+lpdf.head()
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price	Touchscreen	IPS	x_res	y_res
+0	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8	128GB SSD	Intel Iris Plus Graphics 640	macOS	0	1.37	11912523.48	0	1	IPS Panel Retina Display 2560	1600
+1	Apple	Macbook Air	Ultrabook	13.3	1440x900	Intel Core i5 1.8GHz	8	128GB Flash Storage	Intel HD Graphics 6000	macOS	0	1.34	7993374.48	0	0	1440	900
+2	HP	250 G6	Notebook	15.6	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8	256GB SSD	Intel HD Graphics 620	No OS	0	1.86	5112900.00	0	0	Full HD 1920	1080
+3	Apple	MacBook Pro	Ultrabook	15.4	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16	512GB SSD	AMD Radeon Pro 455	macOS	0	1.83	22563005.40	0	1	IPS Panel Retina Display 2880	1800
+4	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8	256GB SSD	Intel Iris Plus Graphics 650	macOS	0	1.37	16037611.20	0	1	IPS Panel Retina Display 2560	1600
+lpdf['x_res'] = lpdf['x_res'].str.replace(',','').str.findall(r'(\d+\.?\d+)').apply(lambda x:x[0])
+lpdf['y_res'] = lpdf['y_res'].str.replace(',','').str.findall(r'(\d+\.?\d+)').apply(lambda x:x[0])
+lpdf.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 977 entries, 0 to 976
+Data columns (total 17 columns):
+ #   Column                    Non-Null Count  Dtype  
+---  ------                    --------------  -----  
+ 0   Manufacturer              977 non-null    object 
+ 1   Model Name                977 non-null    object 
+ 2   Category                  977 non-null    object 
+ 3   Screen Size               977 non-null    float64
+ 4   Screen                    977 non-null    object 
+ 5   CPU                       977 non-null    object 
+ 6   RAM                       977 non-null    int32  
+ 7    Storage                  977 non-null    object 
+ 8   GPU                       977 non-null    object 
+ 9   Operating System          977 non-null    object 
+ 10  Operating System Version  977 non-null    object 
+ 11  Weight                    977 non-null    float32
+ 12  Price                     977 non-null    float64
+ 13  Touchscreen               977 non-null    int64  
+ 14  IPS                       977 non-null    int64  
+ 15  x_res                     977 non-null    object 
+ 16  y_res                     977 non-null    object 
+dtypes: float32(1), float64(2), int32(1), int64(2), object(11)
+memory usage: 122.2+ KB
+lpdf['x_res'] = lpdf['x_res'].astype('int')
+lpdf['y_res'] = lpdf['y_res'].astype('int')
+lpdf.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 977 entries, 0 to 976
+Data columns (total 17 columns):
+ #   Column                    Non-Null Count  Dtype  
+---  ------                    --------------  -----  
+ 0   Manufacturer              977 non-null    object 
+ 1   Model Name                977 non-null    object 
+ 2   Category                  977 non-null    object 
+ 3   Screen Size               977 non-null    float64
+ 4   Screen                    977 non-null    object 
+ 5   CPU                       977 non-null    object 
+ 6   RAM                       977 non-null    int32  
+ 7    Storage                  977 non-null    object 
+ 8   GPU                       977 non-null    object 
+ 9   Operating System          977 non-null    object 
+ 10  Operating System Version  977 non-null    object 
+ 11  Weight                    977 non-null    float32
+ 12  Price                     977 non-null    float64
+ 13  Touchscreen               977 non-null    int64  
+ 14  IPS                       977 non-null    int64  
+ 15  x_res                     977 non-null    int64  
+ 16  y_res                     977 non-null    int64  
+dtypes: float32(1), float64(2), int32(1), int64(4), object(9)
+memory usage: 122.2+ KB
+lpdf['CPU'].value_counts()
+Intel Core i5 7200U 2.5GHz     151
+Intel Core i7 7700HQ 2.8GHz    123
+Intel Core i7 7500U 2.7GHz     103
+Intel Core i7 8550U 1.8GHz      71
+Intel Core i5 8250U 1.6GHz      71
+                              ... 
+Intel Core i7 2.9GHz             1
+AMD E-Series 7110 1.8GHz         1
+Intel Core i5 2.9GHz             1
+Intel Core M m3 1.2GHz           1
+Intel Core i5 7200U 2.70GHz      1
+Name: CPU, Length: 106, dtype: int64
+lpdf['CPU name']=lpdf['CPU'].apply(lambda x:x.split()[0:3])
+lpdf.head()
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	GPU	Operating System	Operating System Version	Weight	Price	Touchscreen	IPS	x_res	y_res	CPU name
+0	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8	128GB SSD	Intel Iris Plus Graphics 640	macOS	0	1.37	11912523.48	0	1	2560	1600	[Intel, Core, i5]
+1	Apple	Macbook Air	Ultrabook	13.3	1440x900	Intel Core i5 1.8GHz	8	128GB Flash Storage	Intel HD Graphics 6000	macOS	0	1.34	7993374.48	0	0	1440	900	[Intel, Core, i5]
+2	HP	250 G6	Notebook	15.6	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8	256GB SSD	Intel HD Graphics 620	No OS	0	1.86	5112900.00	0	0	1920	1080	[Intel, Core, i5]
+3	Apple	MacBook Pro	Ultrabook	15.4	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16	512GB SSD	AMD Radeon Pro 455	macOS	0	1.83	22563005.40	0	1	2880	1800	[Intel, Core, i7]
+4	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8	256GB SSD	Intel Iris Plus Graphics 650	macOS	0	1.37	16037611.20	0	1	2560	1600	[Intel, Core, i5]
+lpdf['CPU name'].value_counts().plot(kind='bar')
+<Axes: >
+
+lpdf['RAM'].value_counts().plot(kind='bar')
+<Axes: >
+
+sns.barplot(x=lpdf['RAM'], y=lpdf['Price'])
+<Axes: xlabel='RAM', ylabel='Price'>
+
+lpdf[' Storage'].value_counts()
+256GB SSD                        318
+1TB HDD                          171
+512GB SSD                         91
+500GB HDD                         79
+128GB SSD +  1TB HDD              71
+128GB SSD                         62
+256GB SSD +  1TB HDD              52
+32GB Flash Storage                29
+2TB HDD                           14
+512GB SSD +  1TB HDD              13
+1TB SSD                           11
+256GB SSD +  2TB HDD              10
+64GB Flash Storage                 9
+16GB Flash Storage                 6
+256GB Flash Storage                5
+32GB SSD                           5
+128GB Flash Storage                4
+1GB SSD                            4
+256GB SSD +  256GB SSD             2
+16GB SSD                           2
+1TB SSD +  1TB HDD                 2
+512GB SSD +  2TB HDD               2
+128GB SSD +  2TB HDD               2
+512GB SSD +  512GB SSD             1
+512GB SSD +  256GB SSD             1
+64GB SSD                           1
+64GB Flash Storage +  1TB HDD      1
+256GB SSD +  500GB HDD             1
+1TB HDD +  1TB HDD                 1
+32GB HDD                           1
+1TB Hybrid                         1
+512GB Flash Storage                1
+128GB HDD                          1
+240GB SSD                          1
+8GB SSD                            1
+508GB Hybrid                       1
+Name:  Storage, dtype: int64
+lpdf[' Storage'].value_counts().plot(kind='bar')
+<Axes: >
+
+sns.barplot(x=lpdf[' Storage'], y=lpdf['Price'])
+plt.xticks(rotation='vertical')
+plt.show()
+
+lpdf['GPU'].value_counts()
+Intel HD Graphics 620             225
+Intel HD Graphics 520              98
+Intel UHD Graphics 620             66
+Nvidia GeForce GTX 1050            57
+AMD Radeon 530                     37
+                                 ... 
+Nvidia GeForce GTX 960<U+039C>      1
+Intel Graphics 620                  1
+Nvidia GeForce GTX 960              1
+AMD Radeon R5 520                   1
+AMD Radeon R9 M385                  1
+Name: GPU, Length: 98, dtype: int64
+lpdf['GPU brand'] = lpdf['GPU'].apply(lambda x:x.split()[0])
+lpdf['GPU brand'].value_counts()
+Intel     525
+Nvidia    310
+AMD       142
+Name: GPU brand, dtype: int64
+sns.barplot(x=lpdf['GPU brand'], y=lpdf['Price'])
+plt.xticks(rotation='vertical')
+plt.show()
+
+lpdf.drop(columns = ['GPU'], inplace=True)
+lpdf.head()
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	Operating System	Operating System Version	Weight	Price	Touchscreen	IPS	x_res	y_res	CPU name	GPU brand
+0	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8	128GB SSD	macOS	0	1.37	11912523.48	0	1	2560	1600	[Intel, Core, i5]	Intel
+1	Apple	Macbook Air	Ultrabook	13.3	1440x900	Intel Core i5 1.8GHz	8	128GB Flash Storage	macOS	0	1.34	7993374.48	0	0	1440	900	[Intel, Core, i5]	Intel
+2	HP	250 G6	Notebook	15.6	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8	256GB SSD	No OS	0	1.86	5112900.00	0	0	1920	1080	[Intel, Core, i5]	Intel
+3	Apple	MacBook Pro	Ultrabook	15.4	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16	512GB SSD	macOS	0	1.83	22563005.40	0	1	2880	1800	[Intel, Core, i7]	AMD
+4	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8	256GB SSD	macOS	0	1.37	16037611.20	0	1	2560	1600	[Intel, Core, i5]	Intel
+lpdf['Operating System'].value_counts()
+Windows      837
+No OS         52
+Linux         48
+Chrome OS     22
+macOS         13
+Mac OS         4
+Android        1
+Name: Operating System, dtype: int64
+sns.barplot(x=lpdf['Operating System'], y=lpdf['Price'])
+<Axes: xlabel='Operating System', ylabel='Price'>
+
+def os(inp):
+    if inp == 'Windows':
+        return 'Windows'
+    elif inp == 'macOS' or inp == 'Mac OS':
+        return 'Mac'
+    else:
+        return 'Android/Chrome OS/No OS/Linux'
+lpdf['os'] = lpdf['Operating System'].apply(os)
+sns.barplot(x=lpdf['os'],y=lpdf['Price'])
+plt.show()
+
+sns.distplot(lpdf['Weight'])
+<ipython-input-132-42d133f5fa41>:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(lpdf['Weight'])
+<Axes: xlabel='Weight', ylabel='Density'>
+
+sns.scatterplot(x=lpdf['Weight'],y=lpdf['Price'])
+<Axes: xlabel='Weight', ylabel='Price'>
+
+sns.distplot(np.log(lpdf['Price']))
+<ipython-input-134-6ff0021f27c1>:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(np.log(lpdf['Price']))
+<Axes: xlabel='Price', ylabel='Density'>
+
+correlation with price
+lpdf.corr()['Price']
+<ipython-input-135-ace245dd8161>:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  lpdf.corr()['Price']
+Screen Size    0.075152
+RAM            0.764005
+Weight         0.224415
+Price          1.000000
+Touchscreen    0.206893
+IPS            0.234718
+x_res          0.579901
+y_res          0.577594
+Name: Price, dtype: float64
+sns.heatmap(lpdf.corr())
+<ipython-input-136-385f189452c3>:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  sns.heatmap(lpdf.corr())
+<Axes: >
+
+X = lpdf.drop(columns=['Price','Screen','Category','CPU','Manufacturer'])
+y = np.log(lpdf['Price'])
+Here, we remove the price, screen, category, CPU, and manufacturer columns because the majority of the data in the x axis is not operating because the variable string has not been converted to a float.
+lpdf
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	Operating System	Operating System Version	Weight	Price	Touchscreen	IPS	x_res	y_res	CPU name	GPU brand	os
+0	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8	128GB SSD	macOS	0	1.37	11912523.48	0	1	2560	1600	[Intel, Core, i5]	Intel	Mac
+1	Apple	Macbook Air	Ultrabook	13.3	1440x900	Intel Core i5 1.8GHz	8	128GB Flash Storage	macOS	0	1.34	7993374.48	0	0	1440	900	[Intel, Core, i5]	Intel	Mac
+2	HP	250 G6	Notebook	15.6	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8	256GB SSD	No OS	0	1.86	5112900.00	0	0	1920	1080	[Intel, Core, i5]	Intel	Android/Chrome OS/No OS/Linux
+3	Apple	MacBook Pro	Ultrabook	15.4	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16	512GB SSD	macOS	0	1.83	22563005.40	0	1	2880	1800	[Intel, Core, i7]	AMD	Mac
+4	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8	256GB SSD	macOS	0	1.37	16037611.20	0	1	2560	1600	[Intel, Core, i5]	Intel	Mac
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...
+972	Dell	Alienware 17	Gaming	17.3	Full HD 1920x1080	Intel Core i7 6700HQ 2.6GHz	32	256GB SSD + 1TB HDD	Windows	10	4.42	24897600.00	0	0	1920	1080	[Intel, Core, i7]	Nvidia	Windows
+973	Toshiba	Tecra A40-C-1DF	Notebook	14.0	Full HD 1920x1080	Intel Core i5 6200U 2.3GHz	8	256GB SSD	Windows	10	1.95	10492560.00	0	0	1920	1080	[Intel, Core, i5]	Intel	Windows
+974	Asus	Rog Strix	Gaming	17.3	Full HD 1920x1080	Intel Core i7 7700HQ 2.8GHz	16	256GB SSD + 1TB HDD	Windows	10	2.73	18227710.80	0	0	1920	1080	[Intel, Core, i7]	Nvidia	Windows
+975	HP	Probook 450	Notebook	15.6	IPS Panel Full HD 1920x1080	Intel Core i5 7200U 2.70GHz	8	128GB SSD + 1TB HDD	Windows	10	2.04	8705268.00	0	1	1920	1080	[Intel, Core, i5]	Nvidia	Windows
+976	Lenovo	ThinkPad T460	Notebook	14.0	1366x768	Intel Core i5 6200U 2.3GHz	4	508GB Hybrid	Windows	7	1.70	8909784.00	0	0	1366	768	[Intel, Core, i5]	Intel	Windows
+977 rows × 19 columns
+
+Here we import Scikit-learn (sklearn) for Data preprocessing, model selection, training, evaluation, and visualization.
+from sklearn.model_selection import train_test_split
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.15,random_state=2)
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.metrics import r2_score,mean_absolute_error
+from sklearn.linear_model import LinearRegression
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+Linear Regression
+
+X = lpdf.drop(columns=['Price','Screen','Category','CPU'])
+y = np.log(lpdf['Price'])
+​
+for col in X.select_dtypes(include='object'):
+    X[col] = X[col].astype(str).astype('category').cat.codes
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.15,random_state=2)
+​
+# Train the linear regression model
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression()
+lr.fit(X_train,y_train)
+​
+# Predict using the trained model
+y_pred = lr.predict(X_test)
+​
+# Calculate the mean squared error
+from sklearn.metrics import mean_squared_error
+mean_squared_error(y_test,y_pred)
+0.1427269974414869
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, color='pink', label='Actual vs Predicted')
+plt.plot(y_test, y_test, color='blue', linestyle='--', label='Perfect Prediction')  # Plotting the diagonal line
+plt.xlabel('Actual Price (log scale)')
+plt.ylabel('Predicted Price (log scale)')
+plt.title('Linear Regression: Actual vs Predicted Price')
+plt.legend()
+plt.show()
+
+KNN algo
+
+knn = KNeighborsRegressor(n_neighbors=3)
+knn.fit(X_train,y_train)
+​
+# Predict using the trained model
+y_pred = knn.predict(X_test)
+​
+# Calculate the mean squared error
+mean_squared_error(y_test,y_pred)
+​
+0.07349749271632915
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, color='blue', label='Actual vs Predicted')
+plt.plot(y_test, y_test, color='red', linestyle='--', label='Perfect Prediction')  # Plotting the diagonal line
+plt.xlabel('Actual Price (log scale)')
+plt.ylabel('Predicted Price (log scale)')
+plt.title('KNN Regression: Actual vs Predicted Price')
+plt.legend()
+plt.show()
+
+Decision Tree
+
+dt = DecisionTreeRegressor()
+dt.fit(X_train,y_train)
+​
+# Predict using the trained model
+y_pred = dt.predict(X_test)
+​
+# Calculate the mean squared error
+mean_squared_error(y_test,y_pred)
+​
+0.05863516940403429
+from sklearn.tree import plot_tree
+​
+# Plotting the decision tree vertically
+plt.figure(figsize=(10, 20))
+plot_tree(dt, filled=True, feature_names=X.columns)
+plt.show()
+
+Random Forest
+
+rf = RandomForestRegressor()
+rf.fit(X_train,y_train)
+​
+# Predict using the trained model
+y_pred = rf.predict(X_test)
+​
+# Calculate the mean squared error
+mean_squared_error(y_test,y_pred)
+​
+0.04494223776598739
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, color='blue', label='Actual vs Predicted')
+plt.plot(y_test, y_test, color='red', linestyle='--', label='Perfect Prediction')  # Plotting the diagonal line
+plt.xlabel('Actual Price (log scale)')
+plt.ylabel('Predicted Price (log scale)')
+plt.title('Random Forest Regression: Actual vs Predicted Price')
+plt.legend()
+plt.show()
+
+The random forest regresson is getting the most accurate result with a mean squared error of 0.1725.
+import pickle
+pickle.dump(lpdf,open('df.pkl','wb'))
+We used pickle to serialize and deserialize Python objects. This means that you can convert a Python object into a binary stream of data that can be stored or transmitted, and then later convert it back into a Python object.
+lpdf
+Manufacturer	Model Name	Category	Screen Size	Screen	CPU	RAM	Storage	Operating System	Operating System Version	Weight	Price	Touchscreen	IPS	x_res	y_res	CPU name	GPU brand	os
+0	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 2.3GHz	8	128GB SSD	macOS	0	1.37	11912523.48	0	1	2560	1600	[Intel, Core, i5]	Intel	Mac
+1	Apple	Macbook Air	Ultrabook	13.3	1440x900	Intel Core i5 1.8GHz	8	128GB Flash Storage	macOS	0	1.34	7993374.48	0	0	1440	900	[Intel, Core, i5]	Intel	Mac
+2	HP	250 G6	Notebook	15.6	Full HD 1920x1080	Intel Core i5 7200U 2.5GHz	8	256GB SSD	No OS	0	1.86	5112900.00	0	0	1920	1080	[Intel, Core, i5]	Intel	Android/Chrome OS/No OS/Linux
+3	Apple	MacBook Pro	Ultrabook	15.4	IPS Panel Retina Display 2880x1800	Intel Core i7 2.7GHz	16	512GB SSD	macOS	0	1.83	22563005.40	0	1	2880	1800	[Intel, Core, i7]	AMD	Mac
+4	Apple	MacBook Pro	Ultrabook	13.3	IPS Panel Retina Display 2560x1600	Intel Core i5 3.1GHz	8	256GB SSD	macOS	0	1.37	16037611.20	0	1	2560	1600	[Intel, Core, i5]	Intel	Mac
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...
+972	Dell	Alienware 17	Gaming	17.3	Full HD 1920x1080	Intel Core i7 6700HQ 2.6GHz	32	256GB SSD + 1TB HDD	Windows	10	4.42	24897600.00	0	0	1920	1080	[Intel, Core, i7]	Nvidia	Windows
+973	Toshiba	Tecra A40-C-1DF	Notebook	14.0	Full HD 1920x1080	Intel Core i5 6200U 2.3GHz	8	256GB SSD	Windows	10	1.95	10492560.00	0	0	1920	1080	[Intel, Core, i5]	Intel	Windows
+974	Asus	Rog Strix	Gaming	17.3	Full HD 1920x1080	Intel Core i7 7700HQ 2.8GHz	16	256GB SSD + 1TB HDD	Windows	10	2.73	18227710.80	0	0	1920	1080	[Intel, Core, i7]	Nvidia	Windows
+975	HP	Probook 450	Notebook	15.6	IPS Panel Full HD 1920x1080	Intel Core i5 7200U 2.70GHz	8	128GB SSD + 1TB HDD	Windows	10	2.04	8705268.00	0	1	1920	1080	[Intel, Core, i5]	Nvidia	Windows
+976	Lenovo	ThinkPad T460	Notebook	14.0	1366x768	Intel Core i5 6200U 2.3GHz	4	508GB Hybrid	Windows	7	1.70	8909784.00	0	0	1366	768	[Intel, Core, i5]	Intel	Windows
+977 rows × 19 columns
+
+X_train
+Manufacturer	Model Name	Screen Size	RAM	Storage	Operating System	Operating System Version	Weight	Touchscreen	IPS	x_res	y_res	CPU name	GPU brand	os
+799	4	433	15.6	8	15	5	1	2.00	0	0	1920	1080	29	0	2
+197	7	284	13.3	8	27	5	1	1.49	0	0	1920	1080	30	1	2
+199	7	294	17.3	8	15	5	1	2.50	0	0	1920	1080	31	2	2
+84	0	45	15.6	4	8	5	1	2.10	0	0	1366	768	10	0	2
+412	7	4	15.6	4	8	5	1	2.10	0	0	1920	1080	29	0	2
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...
+534	2	306	15.6	8	3	5	1	2.30	0	1	1920	1080	30	2	2
+584	4	66	11.6	4	5	1	0	1.26	0	0	1366	768	26	1	0
+493	0	46	15.6	8	8	5	1	2.20	0	0	1366	768	1	0	2
+527	10	161	15.6	8	20	4	0	2.20	0	0	1366	768	29	2	0
+168	0	54	17.3	8	15	5	1	3.00	0	1	1920	1080	30	2	2
+830 rows × 15 columns
+
